@@ -1,0 +1,171 @@
+/*-----------------------------------------------------------------------------------
+
+    Calculator Name: Chendo calc
+    Theme URI: https
+    Description: Calculator Open Source
+    Author: @chendito - chendo : developer and web designer
+    Author URI: http://chendo.io in development
+    Github: https://github.com/chendito
+    Youtube: https://youtube.com/chendito
+    Version: 0.01
+
+-----------------------------------------------------------------------------------*/
+:root {
+  --bg-color: #212429;
+  --cont-color: #34383E;
+  --black: #000;
+  --gris: #777;
+  --white: #fff;
+  --display: #86B297;
+  --btn-action: #B74D6C;
+  --git-chendo: #fd3938;
+}
+body {
+    background-color: var(--bg-color);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    overflow: hidden;
+  }
+  /*@chendito*/
+  h1 {
+    text-align: center;
+    color: var(--white);
+  }
+  i.fa-github {
+    font-size: 1em;
+    color: var(--git-chendo);
+  }
+  /*<-------->*/
+  /*turn on off*/
+  .turn-on-off {
+    visibility: hidden;
+  }
+  /*<---------->*/
+  /*Fields show*/
+  .field-name {
+    display: flex;
+    justify-content: space-between;
+  }
+  p {
+    color: var(--white);
+  }
+  .field-name span {
+    color: var(--display);
+  }
+  .back-op {
+      background-color: var(--cont-color);
+      padding: .5em;
+      border-radius: .3em;
+      width: 15.7em;
+      border: .01em double var(--gris);
+      box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, .7);
+  }
+  .field-result {
+      background-color: var(--display);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: .3em 0;
+      width: 100%;
+      height: 3.3em;
+  }
+  /*animation cursor field*/
+  .show-op { /* left display field*/
+    padding-left: .4em;
+    width: 15em;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+  }
+  .show-op::after {
+    content: '│';
+    color: var(--black);
+    animation: .9s animated  infinite;
+    -webkit-animation: .9s animated  infinite;
+  }
+  @keyframes animated {
+    from { opacity: 0; }
+    to { opacity: 1;}
+  }
+  /*<---------------->*/
+  .field-result input {
+    background-color: transparent;
+    padding-left: .4em;
+    user-select: none;
+    border: none;
+    outline: none;
+  }
+  .show-result {
+    margin: 0 .4em;
+    align-self: flex-end;
+    user-select: none;
+  }
+/*>-----show end------<*/
+  .container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+  }
+  .container-one {
+    display: grid;
+    grid-template-columns: repeat(6, 41.7px);
+    margin-bottom: .5em;
+  }
+  .container-two {
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+  }
+  button {
+    background-color: var(--cont-color);
+    color: var(--white)
+  }
+  button.btn {
+    width: 2em;
+    height: 1em;
+    border-radius: 1em;
+  }
+  .btn-column {
+    display: flex;
+    flex-direction: column;
+  }
+  .btn-column span {
+    font-size: .6em;
+    text-align: center;
+    color: var(--white);
+  }
+  .btn {
+    padding: .5em;
+    margin: .2em;
+    cursor: pointer;
+  }
+  .btn-replay {
+    position: relative;
+    width: 5.5em;
+    height: 4em;
+    border-radius: 3em 3em 5em 5em;
+  }
+  /* btn scientific calculator*/
+  .btn-cs {
+    padding: .1em;
+    margin: .3em;
+    border-radius: .4em;
+    cursor: pointer;
+  }
+  .opacity {
+    visibility: hidden;
+  }
+  /*btn math*/
+  .btn-math {
+    padding: .5em;
+    margin: .2em;
+    border-radius: .5em 0 .5em 0;
+    cursor: pointer;
+  }
+  .btn-action {
+    background-color: var(--btn-action);
+  }
+  /*chendo calc v 0.01*/
