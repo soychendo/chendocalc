@@ -32,7 +32,13 @@ body {
   /*@chendito*/
   h1 {
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: var(--white);
+    position: absolute;
+    top: .5em;
+    left: .5em;
   }
   i.fa-github {
     font-size: 1em;
