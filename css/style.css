@@ -44,6 +44,10 @@ body {
     font-size: 1em;
     color: var(--git-chendo);
   }
+  h1 a {
+    text-decoration: none;
+    color: #ccc;
+  }
   /*<-------->*/
   /*turn on off*/
   .turn-on-off {
@@ -127,7 +131,15 @@ body {
   }
   button {
     background-color: var(--cont-color);
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: none;
+    border-bottom: none;
+    box-shadow: 1px 1px 2px #000;
     color: var(--white)
+  }
+  button:active {
+    background-color: #212429;
   }
   button.btn {
     width: 2em;
