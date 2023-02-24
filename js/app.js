@@ -15,10 +15,10 @@ const resultsCalc = document.querySelector("#results_calc");
 const showResult = document.querySelector('.show-result');
 let showOp = document.querySelector('#texto');
 /*<--onOff-->*/
-const onOff = document.querySelector('.onOff');
+const onOffButton = document.querySelector('.onOff');
 
 /*Turn on off*/
-onOff.addEventListener('click', () => {
+onOffButton.addEventListener('click', () => {
     resultsCalc.value = '';
     showResult.textContent = '';
     showOp.classList.toggle('turn-on-off');
@@ -32,7 +32,7 @@ function calculator() {
             let cutedValue = target.value.trim();
             switch (true){
                 case cutedValue == "equal":
-                    checkNum(resultsCalc) ? showCalc(resultsCalc) : 'ERROR SINTAXIS'; // verifying and displaying results
+                    checkButtonValue(resultsCalc) ? printResult(resultsCalc) : 'ERROR SINTAXIS'; // verifying and displaying results
                 break;
                 case cutedValue == "clear": // if clear
                     // clean everything
@@ -41,7 +41,7 @@ function calculator() {
                     showOp.textContent = '';
                 break;
                 case cutedValue == "del":
-                    delBack(resultsCalc); // function -> delete back --> input hidden
+                    deleteCharacter(resultsCalc); // function -> delete back --> input hidden
                     showOp.textContent = showOp.textContent.slice(0,-1); // delete char --> showOp
                 break;
                 case (cutedValue === "ln" 
@@ -55,7 +55,7 @@ function calculator() {
                 || cutedValue === "sin" 
                 || cutedValue === "cos"
                 || cutedValue === "tan"):
-                if (checkNum(resultsCalc)) { 
+                if (checkButtonValue(resultsCalc)) { 
                     if (cutedValue === "ln") {
                         cutedValue = "log";
                     }
@@ -90,18 +90,18 @@ const addDisplay = (input, character) => {
     :  input.value += character.trim();
 }
 // back --> char --> del
-const delBack = (button) => {
+const deleteCharacter = (button) => {
     button.value = button.value.substring(0, button.value.length - 1)
 }
-// show result 
-const showCalc = (calc) => {
+// print result
+const printResult = (calc) => {
     showResult.textContent = eval(calc.value)
 }
 // check number and char
-const checkNum = (str) => {
-    for (let i = 0; i < str.length; i++) {
-      let ch = str[i];
-      if (!["/", "*", "+", "-", ".", "(", ")"].includes(ch) && isNaN(ch)) {
+const checkButtonValue = (string) => {
+    for (let i = 0; i < string.length; i++) {
+      let character = string[i];
+      if (!["/", "*", "+", "-", ".", "(", ")"].includes(character) && isNaN(character)) {
         alert("invalid entry!");
         return false;
       }
