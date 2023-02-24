@@ -20,6 +20,10 @@
   --btn-action: #B74D6C;
   --git-chendo: #fd3938;
 }
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
 body {
     background-color: var(--bg-color);
     height: 100vh;
