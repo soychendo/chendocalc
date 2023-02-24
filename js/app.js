@@ -1,15 +1,15 @@
-/*-----------------------------------------------------------------------------------
+/*<!-- <-----------------------------------------------------------------------------------
 
     Calculator Name: Chendo calc
     Theme URI: https
     Description: Calculator Open Source
-    Author: @chendito - chendo : developer and web designer
-    Author URI: http://chendo.io in development
-    Github: https://github.com/chendito
-    Youtube: https://youtube.com/chendito
-    Version: 0.01
+    Author: @chendodev - chendo : developer && web designer
+    Author URI: http://chendo.dev in development
+    Github: https://github.com/chendodev
+    Youtube: https://youtube.com/@chendodev
+    Version: 1.0.1
 
------------------------------------------------------------------------------------*/
+----------------------------------------------------------------------------------------->*/
 /*show display*/
 const resultsCalc = document.querySelector("#results_calc"); 
 const showResult = document.querySelector('.show-result');
@@ -92,11 +92,6 @@ const addDisplay = (input, character) => {
 // back --> char --> del
 const delBack = (button) => {
     button.value = button.value.substring(0, button.value.length - 1)
-} // change sign btn
-const changeSign = (button) => {
-    button.value.substring(0, 1) == "-"
-    ? button.value = button.value.substring(1, button.value.length)
-    : button.value = "-" + button.value
 }
 // show result 
 const showCalc = (calc) => {
@@ -105,14 +100,12 @@ const showCalc = (calc) => {
 // check number and char
 const checkNum = (str) => {
     for (let i = 0; i < str.length; i++) {
-        let ch = str.substring(i, i+1)
-        if (ch < "0" || ch > "9") {
-            if (ch != "/" && ch != "*" && ch != "+" && ch != "-" && ch != "." && ch != "(" && ch!= ")") {
-                alert("invalid entry!")
-                return false
-            }
-        }
+      let ch = str[i];
+      if (!["/", "*", "+", "-", ".", "(", ")"].includes(ch) && isNaN(ch)) {
+        alert("invalid entry!");
+        return false;
+      }
     }
-    return true
-}
+    return true;
+  };
 calculator();
