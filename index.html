@@ -1,107 +1,108 @@
-<!-- <-----------------------------------------------------------------------------------
-
-    Calculator Name: Chendo calc
-    Theme URI: https
-    Description: Calculator Open Source
-    Author: @chendodev - chendo : developer && web designer
-    Author URI: http://chendo.dev in development
-    Github: https://github.com/chendodev
-    Youtube: https://youtube.com/@chendodev
-    Version: 1.0.1
-
------------------------------------------------------------------------------------------>
+<!--
+    Chendo Calc - Calculadora científica para el navegador
+    Autor: Soy Chendo
+    Sitio web: https://soychendo.com
+    GitHub: https://github.com/soychendo
+    YouTube: https://youtube.com/@enchufevirtual
+    Versión: 2.0.0
+-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chendo Dev | chendocalc</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Soy Chendo | chendocalc</title>
+    <link rel="icon" type="image/png" href="assets/creator-logo.png">
     <script src="https://kit.fontawesome.com/ac5523c42b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <main class="container-all">
-        <h1><i class="fab fa-github"></i> <a href="https://chendo.dev" target="_blank">chendodev</a></h1>
+        <header class="site-header">
+            <h1><i class="fab fa-github"></i> <a href="https://soychendo.com" target="_blank" rel="noopener noreferrer">soychendo</a></h1>
+            <span class="app-version">v 2.0.0</span>
+            <a class="creator-mark" href="https://soychendo.com" target="_blank" rel="noopener noreferrer" aria-label="Visitar el sitio web de Soy Chendo">
+                <img src="assets/creator-logo.png" alt="">
+            </a>
+        </header>
         <div class="back-op">
             <div class="field-name"><!-- calculator name -->
                 <p>chendo calc</p>
-                <span>v 1.0.1</span>
             </div><!-- shows fields -->
             <div class="field-result"> 
-                <div class="show-op turn-on-off" id="texto"></div>
-                <input readonly autocomplete="off" id="results_calc" type="hidden" value="" size="28" maxlength="25">
-                <div class="show-result"></div>
+                <div class="show-op" id="texto" aria-live="polite">0</div>
+                <output class="show-result" aria-live="polite" aria-label="Resultado">0</output>
             </div>
             <section class="container">
                 <div class="btn-column">
                     <span>SHIFT</span>
-                    <button class="btn"></button>
+                  <button class="btn" type="button" data-action="shift" aria-label="Activar funciones secundarias"></button>
                 </div>
                 <div class="btn-column">
                     <span>ALPHA</span>
-                    <button class="btn"></button>
+                  <button class="btn" type="button" data-action="alpha" aria-label="Activar función de memoria secundaria"></button>
                 </div>
-                <button class="btn-replay">REPLAY</button>
+              <button class="btn-replay" type="button" data-action="replay" aria-label="Recuperar operación anterior">REPLAY</button>
                 <div class="btn-column">
-                    <span>MODE</span>
-                    <button class="btn"></button>
+                  <span class="angle-mode">DEG</span>
+                  <button class="btn" type="button" data-action="mode" aria-label="Cambiar entre grados y radianes"></button>
                 </div>
                 <div class="btn-column">
-                    <span>ON</span> <!-- on/off -->
-                    <button class="btn onOff"></button>
+                    <span class="power-label">ON</span>
+                  <button class="btn onOff" type="button" data-action="power" aria-label="Encender o apagar"></button>
                 </div>
             </section>
             <section class="container-one"> <!-- add more values && more features -->
-                <button class="btn-cs x-1" value="*">x</button> 
-                <button class="btn-cs" value="equal">Calc</button>
-                <span class="btn-cs opacity"></span>
-                <span class="btn-cs opacity"></span>
-                <button class="btn-cs" value="3,1416">Pi</button>
-                <button class="btn-cs x3" value="pow">x³</button>
-                <button class="btn-cs">ab/c</button>
-                <button class="btn-cs" value="sqrt">√</button>
-                <button class="btn-cs" value="sq">x²</button>
-                <button class="btn-cs" value="^">^</button>
-                <button class="btn-cs" value="log">log</button>
-                <button class="btn-cs" value="ln">In</button>
-                <button class="btn-cs" value="-">(-)</button>
-                <button class="btn-cs">.,,,</button>
-                <button class="btn-cs">hyp</button>
-                <button class="btn-cs" value="sin">sin</button>
-                <button class="btn-cs" value="cos">cos</button>
-                <button class="btn-cs" value="tan">tan</button>
-                <button class="btn-cs">Rcl</button>
-                <button class="btn-cs">Eng</button>
-                <button class="btn-cs" value="(">(</button>
-                <button class="btn-cs" value=")">)</button>
-                <button class="btn-cs" value=",">,</button>
-                <button class="btn-cs" value="+">m+</button>
+              <button class="btn-cs" type="button" data-action="multiply">×</button>
+              <button class="btn-cs" type="button" data-action="equal">Calc</button>
+              <span class="btn-cs opacity" aria-hidden="true"></span>
+              <span class="btn-cs opacity" aria-hidden="true"></span>
+              <button class="btn-cs" type="button" data-action="pi">π</button>
+              <button class="btn-cs" type="button" data-action="cube">x³</button>
+              <button class="btn-cs" type="button" data-action="fraction">ab/c</button>
+              <button class="btn-cs" type="button" data-action="sqrt">√</button>
+              <button class="btn-cs" type="button" data-action="square">x²</button>
+              <button class="btn-cs" type="button" data-action="powerOperator">^</button>
+              <button class="btn-cs" type="button" data-action="log">log</button>
+              <button class="btn-cs" type="button" data-action="ln">ln</button>
+              <button class="btn-cs" type="button" data-action="negate">(-)</button>
+              <button class="btn-cs" type="button" data-action="percent">%</button>
+              <button class="btn-cs" type="button" data-action="hyp" aria-label="Funciones hiperbólicas">hyp</button>
+              <button class="btn-cs" type="button" data-action="sin">sin</button>
+              <button class="btn-cs" type="button" data-action="cos">cos</button>
+              <button class="btn-cs" type="button" data-action="tan">tan</button>
+              <button class="btn-cs" type="button" data-action="recall">Rcl</button>
+              <button class="btn-cs" type="button" data-action="eng">Eng</button>
+              <button class="btn-cs" type="button" data-action="open">(</button>
+              <button class="btn-cs" type="button" data-action="close">)</button>
+              <button class="btn-cs" type="button" data-action="decimal">,</button>
+              <button class="btn-cs" type="button" data-action="memory">M+</button>
               </section>
               <section class="container-two">
-                <button class="btn-math" value="7">7</button>
-                <button class="btn-math" value="8">8</button>
-                <button class="btn-math" value="9">9</button>
-                <button class="btn-math btn-action" value="del">DEL</button>
-                <button class="btn-math btn-action" value="clear">AC</button>
-                <button class="btn-math" value="4">4</button>
-                <button class="btn-math" value="5">5</button>
-                <button class="btn-math" value="6">6</button>
-                <button class="btn-math" value="*">x</button>
-                <button class="btn-math" value="/">/</button>
-                <button class="btn-math" value="1">1</button>
-                <button class="btn-math" value="2">2</button>
-                <button class="btn-math" value="3">3</button>
-                <button class="btn-math" value="+">+</button>
-                <button class="btn-math" value="-">-</button>
-                <button class="btn-math" value="0">0</button>
-                <button class="btn-math" value=".">.</button>
-                <button class="btn-math" value="exp">EXP</button>
-                <button class="btn-math" value="ans">Ans</button>
-                <button class="btn-math" value="equal">=</button>
+              <button class="btn-math" type="button" data-action="digit" data-value="7">7</button>
+              <button class="btn-math" type="button" data-action="digit" data-value="8">8</button>
+              <button class="btn-math" type="button" data-action="digit" data-value="9">9</button>
+              <button class="btn-math btn-action" type="button" data-action="delete">DEL</button>
+              <button class="btn-math btn-action" type="button" data-action="clear">AC</button>
+              <button class="btn-math" type="button" data-action="digit" data-value="4">4</button>
+              <button class="btn-math" type="button" data-action="digit" data-value="5">5</button>
+              <button class="btn-math" type="button" data-action="digit" data-value="6">6</button>
+              <button class="btn-math" type="button" data-action="multiply">×</button>
+              <button class="btn-math" type="button" data-action="divide">÷</button>
+              <button class="btn-math" type="button" data-action="digit" data-value="1">1</button>
+              <button class="btn-math" type="button" data-action="digit" data-value="2">2</button>
+              <button class="btn-math" type="button" data-action="digit" data-value="3">3</button>
+              <button class="btn-math" type="button" data-action="add">+</button>
+              <button class="btn-math" type="button" data-action="subtract">−</button>
+              <button class="btn-math" type="button" data-action="digit" data-value="0">0</button>
+              <button class="btn-math" type="button" data-action="decimal">.</button>
+              <button class="btn-math" type="button" data-action="exponent">EXP</button>
+              <button class="btn-math" type="button" data-action="answer">Ans</button>
+              <button class="btn-math" type="button" data-action="equal">=</button>
              </section>
         </div>      
     </main> 
+    <script src="js/app.js"></script>
 </body>
-<script src="js/app.js"></script>
 </html>
